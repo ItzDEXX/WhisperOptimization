@@ -17,9 +17,8 @@ Initial profiling revealed two distinct gaps:
 | :--- | :--- | :--- | :--- |
 | **1** | **Flash Attention (v2)** | ✅ Done | Replaced vanilla attention with `SDPA`, significantly reducing memory I/O. |
 | **2** | **CUDA Graphs** | ✅ Done | Used `torch.compile(mode="reduce-overhead")` to capture the graph, eliminating CPU launch overhead. |
-| **3** | **Custom C++ Kernel** | ⚠️ Research | Wrote a raw CUDA `fused_topk` kernel to replace PyTorch's decoder search. **Outcome:** While 10x faster in isolation, integration with CUDA Graphs caused memory pointer conflicts (Static vs. Dynamic memory), leading to a strategic pivot. |
-| **4** | **Speculative Decoding** | ❌ Skipped | Determined architectural incompatibility with CUDA Graphs due to dynamic control flow requirements. |
-| **5** | **INT8 Quantization** | 🏆 **Winner** | Adopted `torchao` INT8 (Weight-Only) quantization. Since Whisper is memory-bound, cutting weight size by 50% effectively doubled available bandwidth. |
+| **3** | **Custom C++ Kernel** | ❌ Skipped(Failed due to Cuda Graphs implementation) | Wrote a raw CUDA `fused_topk` kernel to replace PyTorch's decoder search. **Outcome:** While 10x faster in isolation, integration with CUDA Graphs caused memory pointer conflicts (Static vs. Dynamic memory), leading to a strategic pivot. |
+| **4** | **Speculative Decoding** | ❌ Skippe(Failed due to Cuda Graphs implementation) | Determined architectural incompatibility with CUDA Graphs due to dynamic control flow requirements. |
 
 ## 📂 Project Structure
 
