@@ -31,8 +31,11 @@ This repository documents the evolution of the optimization:
 * `fused_topk.cu`: The experimental C++ kernel (Scope 3 research artifact).
 * `whisper_profile.nsys-rep`: Nsight Systems profiling data.
 
-## 🚀 How to Run the Optimized Model
+## 🚀 How to Run
 
-### 1. Requirements
+### 1. Install Dependencies
+First, install the required libraries (including `torchao` for INT8 support) using the requirements file:
+
 ```bash
-pip install torch transformers librosa torchao
+pip install -r requirements.txt
+python3 asr_optimized.py
