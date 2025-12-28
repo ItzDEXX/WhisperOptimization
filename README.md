@@ -1,4 +1,4 @@
-# ⚡ Optimized Whisper ASR (CUDA Graphs + Flash Attention + INT8)
+# ⚡ Optimized Whisper ASR (CUDA Graphs + Flash Attention)
 
 This project explores low-level optimizations for the OpenAI Whisper model (Small) on NVIDIA GPUs. Moving beyond standard Hugging Face implementations, this project applies **Flash Attention**, **CUDA Graphs**, and **INT8 Quantization** to minimize latency and memory bandwidth bottlenecks.
 
