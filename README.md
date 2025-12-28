@@ -39,3 +39,6 @@ First, install the required libraries (including `torchao` for INT8 support) usi
 ```bash
 pip install -r requirements.txt
 python3 asr_optimized.py
+
+## OUTPUT
+<img width="1555" height="701" alt="image" src="https://github.com/user-attachments/assets/bf1a5699-cf9b-467e-a55c-73514095c473" />
