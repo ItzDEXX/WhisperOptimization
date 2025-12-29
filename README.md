@@ -31,7 +31,7 @@ This repository documents the evolution of the optimization:
 * `fused_topk.cu`: The experimental C++ kernel (Scope 3 research artifact).
 * `whisper_profile.nsys-rep`: Nsight Systems profiling data.
 
-## RESULT ( 4x SpeedUp)
+## RESULT ( 2-3x SpeedUp)
 <img width="1555" height="701" alt="image" src="https://github.com/user-attachments/assets/bf1a5699-cf9b-467e-a55c-73514095c473" />
 
 
